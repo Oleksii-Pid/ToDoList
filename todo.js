@@ -13,7 +13,7 @@ let tasks;
 let tasksCompleted;
 let tasksNotCompleted;
 
-if(dataStorage.length>0){
+if(dataStorage.length > 0){
     tasks = [...dataStorage];
 }else{
     tasks=[]
