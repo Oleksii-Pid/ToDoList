@@ -13,10 +13,10 @@ let tasks;
 let tasksCompleted;
 let tasksNotCompleted;
 
-if(dataStorage.length > 0){
-    tasks = [...dataStorage];
+if(!dataStorage){
+    tasks = [];
 }else{
-    tasks=[]
+    tasks = [...dataStorage]
 }
 
 function Task(name, state){
