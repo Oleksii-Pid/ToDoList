@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="todolist.css">
+    <script defer src="todo.js"></script>
+    
+</head>
+<body> 
+    <div class="wrapper">
+            <div class="header">
+                <h1 class="header__title">todos</h1>
+            </div>            
+            <div class="main">
+                <form class="main__form">
+                    <label class="completed-all">
+                        <input type="checkbox" id="input-checkbox">
+                        <span></span>
+                    </label>
+                    <input id="input-text" placeholder ="What needs to be done?" autofocus="">
+                    <input type="submit" id="input-submit">
+                </form>
+                <ul class="todolist"></ul>
+            </div>
+            <div class="footer" >
+                <div class="inform-main">
+                    <b id="itemsAll">0</b> all  items /<b id="itemsComplet">0</b> completed
+                </div>
+                <ul class="button-group">
+                    <li>
+                         <button class="button btn-all">All</button> 
+                    </li>
+                    <li>
+                        <button class="button btn-active">Active</button> 
+                    </li>
+                    <li> 
+                        <button class="button btn-completed">Completed</button> 
+                    </li>
+                </ul>
+            </div>
+    </div>
+    
+    
+</body>
+</html>
