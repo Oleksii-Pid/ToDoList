@@ -7,7 +7,8 @@ const itemsComplet = document.getElementById('itemsComplet');
 const btnAll = document.querySelector('.btn-all');
 const btnActive = document.querySelector('.btn-active');
 const btnCompleted= document.querySelector('.btn-completed');
-const dataStorage = JSON.parse(localStorage.getItem('tasks'));
+
+let dataStorage = JSON.parse(localStorage.getItem('tasks'));
 
 let tasks;
 let tasksCompleted;
