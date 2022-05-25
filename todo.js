@@ -84,13 +84,14 @@ function taskChange(e){
 }
 function deleteTask(e){
     for(i=0; i<tasks.length; i++){
-        if(tasks[i].name == e.target.parentElement.parentElement.childNodes[1].innerHTML){
-            tasks.splice(i, 1);
-            
-            recordToStorage(tasks)
-            createTask(tasks);
-            filterTasks();
-        }
+        if(tasks[i].name == e.currentTarget.childNodes[1].innerHTML){
+            if(e.target.closest('button')){
+                tasks.splice(i, 1);
+                recordToStorage(tasks)
+                createTask(tasks);
+                filterTasks();
+            }
+         }
     }  
 
 }
@@ -145,7 +146,7 @@ function createTask(arr){
         }
 
         inputCheck.addEventListener('change', taskChange);
-        btnDelete.addEventListener('click', deleteTask);
+        task.addEventListener('click', deleteTask);
         inputCheckbox.addEventListener('change', changeAllTasks);
 
         filterTasks();
