@@ -4,10 +4,9 @@ const form = document.querySelector('.main__form');
 const todoList = document.querySelector('.todolist');
 const itemsAll = document.getElementById('itemsAll');
 const itemsComplet = document.getElementById('itemsComplet');
-const btnAll = document.querySelector('.btn-all');
-const btnActive = document.querySelector('.btn-active');
-const btnCompleted= document.querySelector('.btn-completed');
-const dataStorage = JSON.parse(localStorage.getItem('tasks'));
+const buttonGroup = document.querySelector('.button-group');
+
+let dataStorage = JSON.parse(localStorage.getItem('tasks'));
 
 let tasks;
 let tasksCompleted;
@@ -16,7 +15,7 @@ let tasksNotCompleted;
 if(!dataStorage){
     tasks = [];
 }else{
-    tasks = [...dataStorage]
+    tasks=[...dataStorage]
 }
 
 function Task(name, state){
@@ -26,16 +25,17 @@ function Task(name, state){
 
 form.addEventListener('submit', handlerSubmit);
 
-btnAll.addEventListener('click', ()=>{
-    createTask(tasks)
-})
-
-btnActive.addEventListener('click',()=>{
-    createTask(tasksNotCompleted)
-})
-
-btnCompleted.addEventListener('click',()=>{
-    createTask(tasksCompleted)
+buttonGroup.addEventListener('click', (e)=>{
+    if(e.target.closest('.btn-all')){
+        createTask(tasks)
+    }else 
+    if(e.target.closest('.btn-active')){
+        createTask(tasksNotCompleted)
+    }else
+    if(e.target.closest('.btn-completed')){
+        createTask(tasksCompleted) 
+    }
+    
 })
 
 function changeAllTasks(e){
@@ -91,7 +91,8 @@ function deleteTask(e){
                 createTask(tasks);
                 filterTasks();
             }
-         }
+            
+        }
     }  
 
 }
